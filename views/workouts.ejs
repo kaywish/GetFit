@@ -5,16 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <h1> Hello </h1>
-    <p>
-        <% for( let i in Fit) {%>
-            <%= Fit.name %>
-            
-        <%}%>
+  
+    <div class="workout">
+   <h1> Choose A Workout</h1>
+        <% for ( let i in Fit) {%>
+          <h1>
+          <a class ="workoutChoice" href="/workouts/<%=i%> "">
+          <%= Fit[i].type %>
+          </a>
+       <% }%>
+       </h1>
+
+    </div>
+    
         
-        <%= Fit%>
-    </p>
 </body>
 </html>

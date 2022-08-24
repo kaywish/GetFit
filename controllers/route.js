@@ -32,16 +32,10 @@ router.get ("/home", (req,res) => {
  router.get ("/workouts", (req,res)=> {
  Fit.find()
  .then ((result) => {
-     res.render("workouts.ejs", {name: "Bench Press", Fit: result})
+     res.render("workouts.ejs", { Fit: result})
  })   
  })
 
-//  router.get("/workouts", (req,res) => {
-// Fit.find()
-// .then((result) => {
-//     res.send(result)
-// })
-//  })
 
 
 //POST
@@ -49,6 +43,30 @@ router.post("/workouts", (req,res) =>{
     res.redirect("/workouts")
     console.log("works")
 })
+
+
+//EDIT
+router.get ("/add", (req,res) => {
+    Fit.find()
+    .then ((result) => {
+        res.render("edit.ejs", { Fit: result})
+    })   
+    })
+
+
+
+
+
+
+//Show Route
+router.get("/workouts/:id", (req,res) => {
+    Fit.find()
+    .then ((Fit) => {
+    res.render("show.ejs", { Fit: Fit[req.params.id]})
+    })
+})
+
+
 
 
 
