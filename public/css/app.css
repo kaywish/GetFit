@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.backgroundimg {
+    background-image: url('./background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+     height: 100vh;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-flow: column;
+font-size: 2em;
+}
+
+h1{
+    border: 10px;
+    background-color: black;
+   
+}
+
+
+
+

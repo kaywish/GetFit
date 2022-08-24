@@ -1,64 +1,28 @@
+require("dotenv").config()
 const express = require("express")
 const app = express()
-
-app.use(express.json())
-app.use (express.urlencoded({extended: false}))
-
-const Fit= require("./models/workouts")
-
-app.use(express.static("public"))
-
-const mongoose= require("mongoose")
-const { Router } = require("express")
-mongoose.connect("mongodb://127.0.0.1:27017/basiccrud2")
-mongoose.connection.once("open", () => {
-    console.log("Connected to Mongo")
-})
-
 const methodOverRide= require("method-override")
+
+
+
+//Internal Modules
+const fitController = require("./controllers/route.js")
+
+//Config
+const Port= process.env.PORT||3001;
+app.set("view engine","ejs")
+
+//Middleware
+app.use(express.json())
+app.use (express.urlencoded({extended: true}))
+app.use(express.static("public"))
 app.use(methodOverRide("_method"))
 
+//Routes
+app.use(fitController)
 
-const allWorkouts= [
-    {
-        name: "Bench Press",
-        type: "Chest",
-        img: "",
-        description: "This workout is for the chest"
-    },
-    {
-        name: " Incline Dumbbell Press",
-        type: "Chest",
-        img: "",
-        description: " This workout is for the upper chest"
-    },
-    {
-        name: "Cable Flyes",
-        type: "Chest",
-        img: "",
-        description: " This workout is for the mid chest"
-    }
-]
-
-
-
-
-
-
-
-
-
-//Index Route
-app.get ("/workout", (req,res) => {
-    Fit.find({}, (err, fit) => {
-        res.render("index.ejs", {fit : Fit})
-    })
-})
-
-
-
-
-
+ // internal Routes
+// router.use("/workout", testCtrl)
 
 
 
