@@ -2,7 +2,20 @@ require("dotenv").config()
 const express = require("express")
 const app = express()
 const methodOverRide= require("method-override")
+const userController = require("./controllers/users_controller.js")
+const PORT= process.env.PORT
+const SESSION_SECRET= process.env.SESSION_SECRET
+const session = require("express-session")
+console.log(SESSION_SECRET)
 
+
+app.use(session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized:false,
+}))
+
+app.use("/users", userController)
 
 
 //Internal Modules

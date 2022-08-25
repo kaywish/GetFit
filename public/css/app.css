@@ -38,6 +38,37 @@ font-size: 2em;
 
 }
 
+.showPage{
+    background-image: url(./showpage.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    font-size: 2em;
+    list-style: none;
+   
+}
+
+.showh1{
+    border: 10px;
+    border-radius: 10px;
+    
+}
+
+.showul {
+    list-style: none;
+}
+
+.fitname{
+    border-left: 5px solid #3d2b70 ;
+    padding-left: 5px;
+
+}
+
 
 
 .workoutChoice{

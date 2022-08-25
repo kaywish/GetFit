@@ -7,19 +7,19 @@ const db= require("../models")
 
 
 //----Routes & Controllers-----
-router.get ("/", (req,res) =>{
-    const bench = new Fit({
-        name: "Bench Press",
-        type: "Chest",
-        img: "",
-        description: " Main chest exercise"
-    })
+// router.get ("/", (req,res) =>{
+//     const bench = new Fit({
+//         name: "Bench Press",
+//         type: "Chest",
+//         img: "",
+//         description: " Main chest exercise"
+//     })
 
-    bench.save()
-    .then ((result) => {
-        res.send(result)
-    })
-})
+//     bench.save()
+//     .then ((result) => {
+//         res.send(result)
+//     })
+// })
 
 
 //Home Route
@@ -35,6 +35,17 @@ router.get ("/home", (req,res) => {
      res.render("workouts.ejs", { Fit: result})
  })   
  })
+
+
+//Users
+router.get("/users", (req,res) => {
+    res.render("users.ejs")
+})
+
+//Register
+// router.get("/register",(req,res) => {
+//     res.render("register.ejs")
+// })
 
 
 
