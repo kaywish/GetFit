@@ -50,7 +50,7 @@ justify-content: space-around;
     box-sizing: border-box;
     background: black;
     border-radius: 10px;
-    box-shadow: inset 0 0 15px;
+    /* box-shadow: inset 0 0 15px; */
 
 
 }
@@ -215,4 +215,37 @@ footer {
 }
 
 
+/* NAVIGATION */
+
+.nav, .navbtn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.nav_links .nav {
+display: inline-block;
+padding: 0px 20px;
+}
+
+.nav_links .nav .navbtn{
+    transition: all 0.3s ease 0s;
+
+}
+
+
+.nav_links .nav .navbtn:hover{
+   color: #0088a9
+
+}
 
