@@ -9,13 +9,16 @@
 </head>
 <body>
 <div class ="showPage" >
-    <h1 class ="showh1"> Workouts </h1>
-    
+    <h1 class ="showh1"> <%=Fit.name %> </h1>
 <ul class ="showul">
-  <li class ="fitname"> <%= Fit.name %> </li>
-  <li class ="fitname"> <%= Fit.type %></li>
+  <img class = "benchpic" src=<%=Fit.img%>>
+  <p class = "description">
   <li class ="fitname"> <%= Fit.description %></li>
- 
+  
+
+  </p>
 </ul>
 </div>
 <%-include ("./partials/footer.ejs") %> 
+
+

@@ -6,13 +6,13 @@ const db= require("../models")
 
 
 
-//----Routes & Controllers-----
+// ----Routes & Controllers-----
 // router.get ("/", (req,res) =>{
 //     const bench = new Fit({
 //         name: "Bench Press",
 //         type: "Chest",
-//         img: "",
-//         description: " Main chest exercise"
+//         img: "https://image.shutterstock.com/image-vector/man-doing-barbell-bench-press-600w-1841766727.jpg"
+    
 //     })
 
 //     bench.save()

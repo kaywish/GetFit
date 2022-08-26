@@ -10,11 +10,13 @@
 <body>
   
     <div class="workout">
-   <h1> Choose A Workout</h1>
+   <h1 class = "choose"> Choose A Workout</h1>
         <% for ( let i in Fit) {%>
-          <h1>
+          <h1 class = "hover">
           <a class ="workoutChoice" href="/workouts/<%=i%> "">
-          <%= Fit[i].type %>
+          <%=Fit[i].type %>: 
+            <%= Fit[i].name%>
+        
           </a>
        <% }%>
        </h1>
