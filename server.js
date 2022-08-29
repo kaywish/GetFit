@@ -6,6 +6,7 @@ const userController = require("./controllers/users_controller.js")
 const PORT= process.env.PORT
 const SESSION_SECRET= process.env.SESSION_SECRET
 const session = require("express-session")
+const bodyParser = require("body-parser");
 console.log(SESSION_SECRET)
 
 
@@ -32,7 +33,7 @@ app.use(express.static("public"))
 app.use(methodOverRide("_method"))
 
 //Routes
-app.use(fitController)
+app.use("/",fitController)
 
  // internal Routes
 // router.use("/workout", testCtrl)

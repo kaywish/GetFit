@@ -231,11 +231,13 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
+    background: black;
 }
 
 .nav_links .nav {
 display: inline-block;
 padding: 0px 20px;
+
 }
 
 .nav_links .nav .navbtn{
