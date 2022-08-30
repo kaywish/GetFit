@@ -19,6 +19,11 @@ app.use(session({
 app.use("/users", userController)
 
 
+// Make currentUSer be avail on all route
+//
+
+
+
 //Internal Modules
 const fitController = require("./controllers/route.js")
 

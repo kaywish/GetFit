@@ -3,12 +3,18 @@
 
     <h2> <%= Fit.name %> </h2>
 
-<form action="/workouts/<%=Fit.id%> =?_method=PUT" method="POST">
+<form action="/workouts/<%=Fit.id%>?_method=PUT" method="POST">
     
-    
+    <fieldset>
     Name: <input type="text" name="name" />
+    <br>
+    Type: <input type="text" name="type">
+    <br>
+    Image: <input type="text" name="image">
+    <br>
    Description: <input type="text" name="description" />
 
+</fieldset>
  
     <input type="submit" name= "" value="Edit">
   </form>

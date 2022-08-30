@@ -11,7 +11,7 @@ const authRequired= (req,res,next) => {
     if(req.session.currentUser){
     next()
     }else {
-        res.send(" You must be logged in to do that!")
+       res.send(" You must be logged in to do that!")
     }
 }
 
@@ -89,6 +89,7 @@ router.post("/users", (req,res) => {
 
 })
 
+
 // Destroy Session Route
 router.get("/signout" , (req,res) => {
     req.session.destroy()
@@ -147,7 +148,7 @@ router.delete ("/workouts/:id", authRequired, (req,res) => {
 
 
 //EDIT
-router.get ("/workouts/:id/edit", authRequired, (req,res) => {
+router.get ("/workouts/:id/edit",  (req,res) => {
     Fit.findById(req.params.id, (err, found ) =>
      {
         res.render("edit.ejs", { Fit: found 
@@ -159,35 +160,37 @@ router.get ("/workouts/:id/edit", authRequired, (req,res) => {
 
 
 //Update
-// router.put("/workouts/:id", (req,res) => {
-//     Fit.findByIdAndUpdate(req.params.id, req.body, {new:true} ,( err, update) => {
-//      console.log("updating")
-//      console.log(err)
-//      res.redirect("/workouts")
-//     })
-//  })
-
-router.put("/workouts/:id", async (req,res) => {
-    let newfit
-    try{
-        newfit= await Fit.findById(req.params.id)
-        newfit.name= req.body.name
-        newfit.description= req.body.description
-        await newfit.save()
-        res.redirect("/workouts/:id")
-    } catch {
-        if (newfit == null) {
-            res.redirect("/home")
-        } else {
-        res.render("/workouts/edit" , {
-            Fit : newfit,
-            errorMessage: " Error updating "
+router.put("/workouts/:id", (req,res) => {
+    Fit.findByIdAndUpdate(req.params.id, req.body, {new:true} ,( err, update) => {
         
-        })
-    }
+     console.log(req.params.id)
+     console.log(req.body)
+     console.log(update)
+     res.redirect("/workouts")
+    })
+ })
+
+// router.put("/workouts/:id", async (req,res) => {
+//     let newfit
+//     try{
+//         newfit= await Fit.findById(req.params.id)
+//         newfit.name= req.body.name
+//         newfit.description= req.body.description
+//         await newfit.save()
+//         res.redirect("/workouts/:id")
+//     } catch {
+//         if (newfit == null) {
+//             res.redirect("/home")
+//         } else {
+//         res.render("/workouts/edit" , {
+//             Fit : newfit,
+//             errorMessage: " Error updating "
+        
+//         })
+//     }
     
-    }
-})
+//     }
+// })
 
 
 

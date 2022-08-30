@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 const fitSchema= new mongoose.Schema ({
+    
     name: String,
     type: String,
     img: String,
