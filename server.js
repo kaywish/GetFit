@@ -3,7 +3,7 @@ const express = require("express")
 const app = express()
 const methodOverRide= require("method-override")
 const userController = require("./controllers/users_controller.js")
-const PORT= process.env.PORT
+const PORT= process.env.PORT || 3001
 const SESSION_SECRET= process.env.SESSION_SECRET
 const session = require("express-session")
 const bodyParser = require("body-parser");
@@ -45,6 +45,6 @@ app.use("/",fitController)
 
 
 
-app.listen (3001, () => {
+app.listen (PORT, () => {
     console.log ("Listening on Port 3001")
 })
