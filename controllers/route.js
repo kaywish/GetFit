@@ -15,15 +15,33 @@ const authRequired= (req,res,next) => {
     }
 }
 
+const loggedIn= (req, res, next) => {
+    if(req.session.currentUser) {
+        next()
+        res.redirect("/workouts")
+    }
+}
 
 
 // ----Routes & Controllers-----
 // router.get ("/", (req,res) =>{
 //     const bench = new Fit({
 //         name: "Bench Press",
-//         type: "Chest",
-//         img: "https://image.shutterstock.com/image-vector/man-doing-barbell-bench-press-600w-1841766727.jpg"
-    
+//         description: [
+//             {name: "Bench Press",
+//             description: " For the main chest ",
+//             img: "https://image.shutterstock.com/image-vector/man-doing-barbell-bench-press-600w-1841766727.jpg"
+//         },
+//         {
+//             name: "Incline Dumbbell Press",
+//             img:"https://image.shutterstock.com/image-vector/man-doing-incline-dumbbell-bench-600w-2098037134.jpg",
+//             description: " For the upper chest"
+//         }
+
+
+//         ],
+   
+
 //     })
 
 //     bench.save()
@@ -44,7 +62,7 @@ const authRequired= (req,res,next) => {
 // })
 
 
-router.post("/register", (req,res) => {
+router.post("/register",  (req,res) => {
    const salt= bcrypt.genSaltSync(10)
    req.body.password=bcrypt.hashSync(req.body.password, salt)
    console.log(req.body)
@@ -90,10 +108,11 @@ router.post("/users", (req,res) => {
 })
 
 
-// Destroy Session Route
-router.get("/signout" , (req,res) => {
+
+// Logout Route
+router.delete("/signout", authRequired, (req,res) => {
     req.session.destroy()
-    res.redirect("/home")
+    res.redirect("/users")
 })
 
 
@@ -111,6 +130,7 @@ router.get ("/home", (req,res) => {
    
     })
 
+
 //Workouts
  router.get ("/workouts", (req,res)=> {
  Fit.find()
@@ -122,7 +142,9 @@ router.get ("/home", (req,res) => {
 
 //Users
 router.get("/users", (req,res) => {
+    
     res.render("users.ejs")
+
 })
 
 // Register
@@ -133,13 +155,13 @@ router.get("/register",(req,res) => {
 
 
 //POST
-router.post("/workouts", (req,res) =>{
+router.post("/workouts",  (req,res) =>{
     res.redirect("/workouts")
     console.log("works")
 })
 
 //DELETE
-router.delete ("/workouts/:id", authRequired, (req,res) => {
+router.delete ("/workouts/:id", authRequired , (req,res) => {
     Fit.findByIdAndRemove(req.params.id, (err, data) =>{
         console.log("Delete")
     res.redirect("/workouts")
@@ -148,7 +170,7 @@ router.delete ("/workouts/:id", authRequired, (req,res) => {
 
 
 //EDIT
-router.get ("/workouts/:id/edit",  (req,res) => {
+router.get ("/workouts/:id/edit", authRequired, (req,res) => {
     Fit.findById(req.params.id, (err, found ) =>
      {
         res.render("edit.ejs", { Fit: found 
@@ -160,7 +182,7 @@ router.get ("/workouts/:id/edit",  (req,res) => {
 
 
 //Update
-router.put("/workouts/:id", (req,res) => {
+router.put("/workouts/:id",(req,res) => {
     Fit.findByIdAndUpdate(req.params.id, req.body, {new:true} ,( err, update) => {
         
      console.log(req.params.id)
@@ -169,35 +191,6 @@ router.put("/workouts/:id", (req,res) => {
      res.redirect("/workouts")
     })
  })
-
-// router.put("/workouts/:id", async (req,res) => {
-//     let newfit
-//     try{
-//         newfit= await Fit.findById(req.params.id)
-//         newfit.name= req.body.name
-//         newfit.description= req.body.description
-//         await newfit.save()
-//         res.redirect("/workouts/:id")
-//     } catch {
-//         if (newfit == null) {
-//             res.redirect("/home")
-//         } else {
-//         res.render("/workouts/edit" , {
-//             Fit : newfit,
-//             errorMessage: " Error updating "
-        
-//         })
-//     }
-    
-//     }
-// })
-
-
-
-
-   
-
-
 
 
 

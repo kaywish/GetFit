@@ -1,25 +1,31 @@
 <%-include ("./partials/header.ejs") %> 
+
 <div class ="showPage" >
     <h1 class ="showh1"> <%=Fit.name %> </h1>
 <ul class ="showul">
   <img class = "benchpic" src=<%=Fit.img%>>
   <p class = "description">
-  <li class ="fitname"> <%= Fit.description %></li>
+    
+  <p class="from"> From <a href="https://www.muscleandstrength.com/"> Muscle And Strength </a></p>
 
+  <li class ="fitname"><%= Fit.description %></li>
 
-  <!--<% for ( i in Fit) %> -->
-
-  <a href="/workouts/<%=Fit.id%>/edit"> Edit </a>
-
+<div class ="fixup">
+  <a class ="editpage" href="/workouts/<%=Fit.id%>/edit"> Edit </a>
+<div class = "deleteform">
   <form action="/workouts/<%=Fit.id%>?_method=DELETE" method="POST">
-    <input type="submit" value="Delete">
+    <input class ="submitbutton" type="submit" value="Delete">
+  </div>
+</div>
   </form>
-
-
-  
   </p>
+
+
 </ul>
 </div>
+
+
+
 <%-include ("./partials/footer.ejs") %> 
 
 

@@ -1,28 +1,64 @@
 <%-include ("./partials/header.ejs") %> 
-    <h1> Edit </h1>
+<body class ="edit">
+    <h1 class ="editworkout"> Edit Workout </h1>
 
-    <h2> <%= Fit.name %> </h2>
+    <h2 class="editworkout"> <%= Fit.name %> </h2>
 
 <form action="/workouts/<%=Fit.id%>?_method=PUT" method="POST">
     
-    <fieldset>
+    <div class ="formclass">
     Name: <input type="text" name="name" />
     <br>
     Type: <input type="text" name="type">
     <br>
-    Image: <input type="text" name="image">
-    <br>
    Description: <input type="text" name="description" />
 
-</fieldset>
+    </div>
  
-    <input type="submit" name= "" value="Edit">
+    <div class = "input">
+    <input class = "submitbutton" type="submit" name= "" value="Edit">
+</div>
+    
   </form>
   
   
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 </body>
 </html>
   <%-include ("./partials/footer.ejs") %> 

@@ -20,8 +20,19 @@ font-size: 2em;
 .welcome{
     border: 10px;
     background-color: black;
+    font-family: 'Aboreto', cursive;
    
 }
+
+.getfit{
+    font-family: 'Aboreto', cursive;
+}
+
+
+.letsgetfit{
+    font-family: 'Aboreto', cursive;
+}
+
 
 .workout{
  background-image: url("./workout.jpg");
@@ -51,14 +62,78 @@ justify-content: space-around;
     background: black;
     border-radius: 10px;
     /* box-shadow: inset 0 0 15px; */
+    font-family: 'Aboreto', cursive;
+
+
+}
+
+.formtext {
+    font-family: 'Aboreto', cursive;;
+}
+
+
+.submitbutton {
+    padding: .5em 1em;
+    border-radius: 6px;
+    background-color: #3d2b70;
+    color: #fff;
+    font-family: 'Aboreto', cursive;
+    font-size: .7em;
+    cursor: pointer;
 
 
 }
 
 
 
+.userback{
+    background-image: url(./user.jpg);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:  #e4e0ee
+}
+.login{
+    text-align: center;
+    font-family: 'Aboreto', cursive;
+}
+.form{
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+   
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+}
+
+.editworkout{
+    text-align: center;
+    font-family:'Aboreto', cursive;
+}
+
+.formclass {
+    text-align: center;
+    font-family: 'Aboreto', cursive;
+}
+
+.input {
+    text-align: center;
+}
+
+
+.edit {
+    background-image: url(./edit.jpg);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .showPage{
-    background-image: url(./showpage.jpg);
+    background-image: url(./workoutbackground.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -72,10 +147,25 @@ justify-content: space-around;
    
 }
 
+.fixup{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+.from{
+    text-align: center;
+    color: whitesmoke;
+}
+
 .showh1{
     border: 10px;
     border-radius: 9px;
   background-color: #050506;
+  font-family: 'Aboreto', cursive;
     
 }
 
@@ -96,21 +186,40 @@ font-size: 1em;
     border-style: ridge;
     border-color: black;
     border-radius: 10px;
+    margin-left: 412px;
 }
 
+.editpage{
+    display: flex;
+    justify-content: center;
+    padding: .5em 1em;
+    border-radius: 6px;
+    color: #fff;
+    font-family: 'Aboreto', cursive;
+    font-size: .9em;
+    cursor: pointer;
+
+}
+
+.deleteform{
+    display: flex;
+    justify-content: center;
+}
 
 
 
 .fitname{
     border-left: 5px solid #3d2b70 ;
     padding-left: 5px;
+    font-family: 'Aboreto', cursive;
+    text-align: center;
 
 }
 
 
 
 .workoutChoice{
-    display: block;
+    /* display: block; */
     height: 50px;
     background: linear-gradient(
         #050506,
@@ -118,13 +227,13 @@ font-size: 1em;
     );
     margin: auto;
     place-items: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Aboreto', cursive;
     color: beige;
     font-weight: 500;
     text-decoration: none;
-    letter-spacing: 3px;
+    letter-spacing: 6px;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: .8em;
 
 }
 
@@ -218,7 +327,7 @@ footer {
 /* NAVIGATION */
 
 .nav, .navbtn {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Aboreto', cursive;
     font-weight: 500;
     font-size: 16px;
     color: #edf0f1;
@@ -247,7 +356,19 @@ padding: 0px 20px;
 
 
 .nav_links .nav .navbtn:hover{
-   color: #0088a9
+   color:  #3d2b70;
 
 }
 
+.type {
+    text-align: center;
+    border-radius: 10px;
+    background-color: #000; 
+    background-size:cover;
+    letter-spacing: 6px;
+    margin: auto;
+    font-family: 'Aboreto', cursive;;
+    
+    
+
+}
